@@ -9,7 +9,7 @@ terraform.tfvars
 .terraform.tfstate.d
 *.pyc
 credentials*.json
-
+tfplan.binary
 # JetBrains - PyCharm, IntelliJ, etc.
 .idea/
 __pycache__/

@@ -1,0 +1,227 @@
+{
+    "format_version": "1.0",
+    "terraform_version": "1.1.8",
+    "variables": {
+        "display_name": {
+            "value": "value"
+        },
+        "kms_key_name": {
+            "value": "value"
+        },
+        "labels": {
+            "value": {
+                "test": "value"
+            }
+        },
+        "metadata_schema_uri": {
+            "value": "value"
+        },
+        "project_id": {
+            "value": "value"
+        },
+        "region": {
+            "value": "value"
+        }
+    },
+    "planned_values": {
+        "outputs": {
+            "vertex_ai_dataset_id": {
+                "sensitive": false
+            },
+            "vertex_ai_dataset_name": {
+                "sensitive": false
+            }
+        },
+        "root_module": {
+            "resources": [
+                {
+                    "address": "google_vertex_ai_dataset.dataset",
+                    "mode": "managed",
+                    "type": "google_vertex_ai_dataset",
+                    "name": "dataset",
+                    "provider_name": "registry.terraform.io/hashicorp/google",
+                    "schema_version": 0,
+                    "values": {
+                        "display_name": "value",
+                        "encryption_spec": [
+                            {
+                                "kms_key_name": "value"
+                            }
+                        ],
+                        "labels": {
+                            "test": "value"
+                        },
+                        "metadata_schema_uri": "value",
+                        "project": "value",
+                        "region": "value",
+                        "timeouts": null
+                    },
+                    "sensitive_values": {
+                        "encryption_spec": [
+                            {}
+                        ],
+                        "labels": {}
+                    }
+                }
+            ]
+        }
+    },
+    "resource_changes": [
+        {
+            "address": "google_vertex_ai_dataset.dataset",
+            "mode": "managed",
+            "type": "google_vertex_ai_dataset",
+            "name": "dataset",
+            "provider_name": "registry.terraform.io/hashicorp/google",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "display_name": "value",
+                    "encryption_spec": [
+                        {
+                            "kms_key_name": "value"
+                        }
+                    ],
+                    "labels": {
+                        "test": "value"
+                    },
+                    "metadata_schema_uri": "value",
+                    "project": "value",
+                    "region": "value",
+                    "timeouts": null
+                },
+                "after_unknown": {
+                    "create_time": true,
+                    "encryption_spec": [
+                        {}
+                    ],
+                    "id": true,
+                    "labels": {},
+                    "name": true,
+                    "update_time": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "encryption_spec": [
+                        {}
+                    ],
+                    "labels": {}
+                }
+            }
+        }
+    ],
+    "output_changes": {
+        "vertex_ai_dataset_id": {
+            "actions": [
+                "create"
+            ],
+            "before": null,
+            "after_unknown": true,
+            "before_sensitive": false,
+            "after_sensitive": false
+        },
+        "vertex_ai_dataset_name": {
+            "actions": [
+                "create"
+            ],
+            "before": null,
+            "after_unknown": true,
+            "before_sensitive": false,
+            "after_sensitive": false
+        }
+    },
+    "configuration": {
+        "root_module": {
+            "outputs": {
+                "vertex_ai_dataset_id": {
+                    "expression": {
+                        "references": [
+                            "google_vertex_ai_dataset.dataset.id",
+                            "google_vertex_ai_dataset.dataset"
+                        ]
+                    },
+                    "description": "vertex_ai_dataset_id"
+                },
+                "vertex_ai_dataset_name": {
+                    "expression": {
+                        "references": [
+                            "google_vertex_ai_dataset.dataset.name",
+                            "google_vertex_ai_dataset.dataset"
+                        ]
+                    },
+                    "description": "vertex_ai_dataset_name"
+                }
+            },
+            "resources": [
+                {
+                    "address": "google_vertex_ai_dataset.dataset",
+                    "mode": "managed",
+                    "type": "google_vertex_ai_dataset",
+                    "name": "dataset",
+                    "provider_config_key": "google",
+                    "expressions": {
+                        "display_name": {
+                            "references": [
+                                "var.display_name"
+                            ]
+                        },
+                        "encryption_spec": [
+                            {
+                                "kms_key_name": {
+                                    "references": [
+                                        "var.kms_key_name"
+                                    ]
+                                }
+                            }
+                        ],
+                        "labels": {
+                            "references": [
+                                "var.labels"
+                            ]
+                        },
+                        "metadata_schema_uri": {
+                            "references": [
+                                "var.metadata_schema_uri"
+                            ]
+                        },
+                        "project": {
+                            "references": [
+                                "var.project_id"
+                            ]
+                        },
+                        "region": {
+                            "references": [
+                                "var.region"
+                            ]
+                        }
+                    },
+                    "schema_version": 0
+                }
+            ],
+            "variables": {
+                "display_name": {
+                    "description": "display_name for Vertex AI"
+                },
+                "kms_key_name": {
+                    "description": "kms_key_name for dataset encryption"
+                },
+                "labels": {
+                    "default": {},
+                    "description": "Labels to be attached to the buckets"
+                },
+                "metadata_schema_uri": {
+                    "description": "YAML file uri stored on Google Cloud Storage"
+                },
+                "project_id": {
+                    "description": "project_id to deploy in"
+                },
+                "region": {
+                    "description": "region to deploy"
+                }
+            }
+        }
+    }
+}
